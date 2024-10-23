@@ -5,6 +5,7 @@
     --text2: rgb(250 204 21);
     --text3:  rgb(23 23 23);
     --bgInput: rgba(250,204,21,0.1);
+    --bgCard: rgba(255,255,255,0.1);
 }
 
 * {
@@ -27,6 +28,12 @@ body {
     padding: 20px 40px;
     position: fixed;
     width: 100%;
+    transition: all .3s ease-in-out;
+    z-index: 99;
+}
+.navbar.discroll {
+    background: var(--text3);
+    box-shadow: 5px 5px 5px var(--bg);
 }
 
 .navbar .logo h3 {
@@ -63,7 +70,7 @@ body {
     font-size: 30px;
 }
 #home .container .teks1 h1 {
-    font-size: 50px;
+    font-size: 45px;
     text-wrap: nowrap;
 }
 #home .container .teks1 h4 {
@@ -138,6 +145,191 @@ body {
  {
     color: var(--text2);
 } 
+
+#about .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    margin-top: 30px;
+}
+#about .container .img {
+    width: 60%;
+}
+#about .container .img img {
+    width: 100%;
+}
+#about .container .text h1 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+#about .container .text .biodata {
+    display: flex;
+    column-gap: 30px;
+    margin-top: 20px;
+}
+#about .container .text .biodata .title p {
+    font-weight: 600;
+}
+#about .container .text .biodata .title p,
+#about .container .text .biodata .data p {
+    margin-bottom: 10px;
+}
+#about .container .text .sosmed {
+    display: flex;
+    column-gap: 40px;
+    margin-top: 10px;
+}
+#about .container .text .sosmed a {
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--text2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#about .container .text .sosmed a:hover {
+    color: var(--text3);
+}
+#about .container .text .sosmed a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: var(--text2);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .5s ease-in-out;
+    border-radius: 5px;
+}
+#about .container .text .sosmed a:hover::before {
+    width: 100%;
+}
+
+#skills h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 30px;
+}
+#skills .container {
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    column-gap: 30px;
+}
+#skills .container .skills1,
+#skills .container .skills2 {
+    width: 50%;
+}
+#skills .container .skills1 .skill,
+#skills .container .skills2 .skill {
+    margin-top: 20px;
+}
+#skills .container .skills1 .skill .text, 
+#skills .container .skills2 .skill .text {
+    display: flex;
+    justify-content: space-between;
+}
+#skills .container .skills1 .skill .box-presentase,
+#skills .container .skills2 .skill .box-presentase {
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+    margin-top: 8px;
+    border: 1px solid var(--text2);
+    padding: 2px;
+}
+#skills .container .skills1 .skill .box-presentase span,
+#skills .container .skills2 .skill .box-presentase span {
+    width: var(--persen);
+    height: 100%;
+    background: var(--text2);
+    display: block;
+    border-radius: 10px;
+}
+
+#project h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 90px;
+}
+#project .container {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: center;
+    
+}
+#project .container .card {
+    width: 350px;
+    height: 250px;
+    background: var(--bgCard);
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#project .container .card h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+#project .container .card p {
+    font-size: 15px;
+}
+#project .container .card .language {
+    margin-top: 10px;
+}
+#project .container .card .language span {
+    font-size: 12px;
+    background: var(--text2);
+    padding: 2px 3px;
+    display: inline-block;
+    margin-top: 5px;
+    border-radius: 2px;
+    color: var(--text3);
+    font-weight: 500;
+}
+#project .container .card .button {
+    display: flex;
+    justify-content: flex-end;
+}
+#project .container .card .button a {
+    padding: 7px 14px;
+    border: 1px solid var(--text2);
+    border-radius: 5px;
+    text-decoration: none;
+    position: relative;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+    font-size: 14px;
+    margin-top: 15px;
+}
+#project .container .card .button a:hover {
+    color: var(--text3);
+}
+#project .container .card .button a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: var(--text2);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .5s ease-in-out;
+    border-radius: 5px;
+}
+#project .container .card .button a:hover::before {
+    width: 100%;
+}
 
 
 #contact {
@@ -222,4 +414,115 @@ body {
 }
 #contact .container form .button button:hover::before {
     width: 100%;
+}
+
+footer {
+    background: var(--bg);
+    padding: 20px 20px 0 20px;
+}
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+footer .container .text {
+   width: 70%;
+}
+footer .container .text h3 {
+   margin-bottom: 10px;
+}
+footer .container .text p {
+   font-size: 13px;
+}
+footer .container .sosmed {
+    display: flex;
+    column-gap: 30px;
+    margin-top: 30px;
+}
+footer .container .sosmed a {
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--text2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+}
+footer .container .sosmed a i {
+    z-index: 2;
+    transition: all .5s ease-in-out;
+}
+footer .container .sosmed a:hover i {
+    color: var(--text3);
+}
+footer .container .sosmed a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: var(--text2);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all .5s ease-in-out;
+    border-radius: 5px;
+}
+footer .container .sosmed a:hover::before {
+    width: 100%;
+}
+footer .bottom {
+    border-top: 1px solid var(--text);
+    margin-top: 15px;
+}
+footer .bottom h6 {
+    text-align: center;
+    padding: 10px 0;
+}
+
+@media (max-width: 1024px) {
+    /* #home .container .img {
+        order: 3;
+    }
+    #home .container .teks1 {
+        order: 1;
+    }
+    
+    #home .container .teks2 {
+        order: 2;
+    } */
+    
+    #home .container .teks1 h1 {
+        font-size: 35px;
+    }
+    #home .container .teks1 h4 {
+        font-size: 20px;
+    }
+    #home .container .teks2 p {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    #home .container .teks2 a {
+        padding: 7px 14px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    #about .container .text {
+        width: 60%;
+    }
+
+    #project .container {
+        grid-template-columns: auto auto; 
+        justify-content: center;
+    }
+    
+    
+}
+
+@media (max-width: 890px) {
+    body  {
+        background: blue;
+    }
 }
