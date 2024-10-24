@@ -1,4 +1,6 @@
-const navbar = document.querySelector(".navbar");
+const navbar = document.querySelector(".navbar"),
+allSEction = document.querySelectorAll("section"),
+allLink = document.querySelectorAll(".navbar .menu a");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
@@ -7,4 +9,8 @@ window.addEventListener("scroll", () => {
         navbar.classList.remove("discroll");
 
     }
+})
+
+document.querySelector(".hamburger").addEventListener("click", () => {
+    navbar.classList.toggle("active");
 })

@@ -16,8 +16,13 @@
     color: var(--text);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bg2);
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -35,17 +40,52 @@ body {
     background: var(--text3);
     box-shadow: 5px 5px 5px var(--bg);
 }
-
 .navbar .logo h3 {
     font-size: 20px;
     font-weight: 900;
     letter-spacing: 1px;
 }
-
 .navbar .menu a {
     text-decoration: none;
     margin: 0 5px;
     font-size: 15px;
+    transition: all .3s ease-in-out;
+}
+.navbar .menu a:hover,
+.navbar .menu a.active {
+    color: var(--text2);
+}
+.navbar .hamburger {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.navbar .hamburger .hamburger-garis {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: var(--text);
+    right: 0;
+    transition: all .4s;
+    display: none;
+}
+.navbar .hamburger .hamburger-garis:nth-child(1) {
+    top: 11px;
+}
+.navbar .hamburger .hamburger-garis:nth-child(3) {
+    bottom: 8px;
+}
+.navbar.active .hamburger .hamburger-garis:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: top right;
+}
+.navbar.active .hamburger .hamburger-garis:nth-child(2) {
+    transform: scale(0);
+}
+.navbar.active .hamburger .hamburger-garis:nth-child(3) {
+    transform: rotate(-43deg);
+    transform-origin: bottom right;
 }
 
 #home .container {
@@ -482,17 +522,6 @@ footer .bottom h6 {
 }
 
 @media (max-width: 1024px) {
-    /* #home .container .img {
-        order: 3;
-    }
-    #home .container .teks1 {
-        order: 1;
-    }
-    
-    #home .container .teks2 {
-        order: 2;
-    } */
-    
     #home .container .teks1 h1 {
         font-size: 35px;
     }
@@ -522,7 +551,125 @@ footer .bottom h6 {
 }
 
 @media (max-width: 890px) {
-    body  {
-        background: blue;
+    .navbar {
+        background: var(--text3);
     }
+    .navbar .menu {
+        position: absolute;
+        background-color: var(--text3);
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        row-gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        transform: translateX(1000px);
+        transition: all .5s ease-in-out;
+    }
+    .navbar.active .menu {
+        transform: translateX(0);
+    }
+    .navbar .hamburger .hamburger-garis {
+        display: block;
+    }
+    
+
+    #home .container {
+        flex-direction: column;
+        padding-top: 100px;
+    }
+    #home .container .img {
+        order: 3;
+        width: 100%;
+    }
+    #home .container .img img {
+        transform: translateX(-30px);
+        width: 100%;
+    }
+    #home .container .teks1 {
+        text-align: center;
+        width: 100%;
+        order: 1;
+        margin-bottom: 10px;
+    }
+    #home .container .teks1 h3 {
+        margin-bottom: 3px;
+    }
+    #home .container .teks1 h1 {
+        margin-bottom: 3px;
+    }
+    #home .container .teks2 {
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
+        order: 2;
+    }
+    #home .container .teks2 p {
+        margin-bottom: 20px;
+    }
+    #home .containerSosmed .sosmed .text {
+        display: none;
+    }
+
+    #about .container {
+        flex-direction: column;
+    }
+    #about .container .img {
+        width: 100%;
+    }
+    #about .container .text {
+        width: 100%;
+    }
+    #about .container .text h1 {
+        text-align: center;
+    }
+    #about .container .text .biodata {
+        column-gap: 10px;
+    }
+    #about .container .text .sosmed {
+        justify-content: center;
+    }    
+
+    #skills {
+        margin-top: 50px;
+    }    
+    #skills .container {
+        flex-direction: column;
+    }
+    #skills .container .skills1,
+    #skills .container .skills2 {
+        width: 100%;
+    }
+    #skills .container .skills1 .skill .text, 
+    #skills .container .skills2 .skill .text {
+        font-size: 14px;
+    }
+
+
+    #project .container {
+        grid-template-columns: auto;
+    }
+
+    #contact .container {
+        flex-direction: column;
+    }
+    #contact .container form {
+        width: 90%;
+    }
+    
+    footer .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer .container .text {
+        width: 100%;
+     }
+     
+    
+    
 }
