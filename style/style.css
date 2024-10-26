@@ -673,7 +673,26 @@ footer .bottom h6 {
     footer .container .text {
         width: 100%;
      }
-     
-    
-    
+}
+
+@media (max-width: 400px) {
+  #home .container .teks1 h1 {
+    font-size: 30px;
+  }
+  
+  #about .container .text .biodata {
+    column-gap: 5px;
+  }
+  #about .container .text .biodata .title p {
+    font-size: 14px;
+    text-wrap: nowrap;
+  }
+  #about .container .text .biodata .data p {
+    font-size: 14px;
+    text-wrap: nowrap;
+  }
+  
+  #project .container .card {
+    width: 300px;
+  }
 }
