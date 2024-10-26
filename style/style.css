@@ -25,6 +25,10 @@ body {
     overflow-x: hidden;
 }
 
+a{
+    text-decoration: none;
+}
+
 .navbar {
     background-color: transparent;
     display: flex;
@@ -99,8 +103,8 @@ body {
     width: 40%;
 }
 #home .container .img img {
-    width: 120%;
-    transform: translateX(-100px);
+    width: 110%;
+    
 }
 
 #home .container .teks1 {
@@ -197,7 +201,7 @@ body {
     width: 60%;
 }
 #about .container .img img {
-    width: 100%;
+    width: 80%;
 }
 #about .container .text h1 {
     font-size: 30px;
